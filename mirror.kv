@@ -1,0 +1,19 @@
+
+AddLocationForm:
+<AddLocationForm>:
+    orientation: 'vertical'
+    FloatLayout:
+        padding: dp(260), dp(150)
+        Button:
+
+            text: 'Enter'
+            size_hint: 0.4, 0.1
+            pos_hint: {"x":0.3, "y":0}
+            on_press: root.send_data(reminder.text)
+
+        TextInput:
+            id: reminder
+            text: 'Enter your reminder kek'
+            size_hint: 0.8, 0.5
+            pos_hint: {"x":0.1, "y":0.3}
+
