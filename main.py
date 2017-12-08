@@ -2,7 +2,7 @@ from kivy.app import App
 from socket import *
 from kivy.uix.floatlayout import FloatLayout
 
-HOST = '192.168.1.68'  # локальный адрес localhost или 127.0.0.1
+HOST = 'localhost'  # локальный адрес localhost или 127.0.0.1
 
 PORT = 21110  # порт на котором работает сервер
 
