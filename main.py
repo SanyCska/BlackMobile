@@ -16,17 +16,17 @@ import socket
 # tcpCliSock.connect(ADDR)  # установка связи с сервером
 host = "192.168.1.68"
 port = 3000
-s = socket.socket()
 
+s = socket.socket()
+s.connect((host, port))
 
 class AddLocationForm(FloatLayout):
 
     def send_data(self, data):
         # tcpCliSock.send(data.encode())  # отправка данных в bytes
         # print(data)
+
         # s = socket.socket()
-        # s.connect((host, port))
-        s = socket.socket()
         encoded_msg = bytes(data, "utf-8")
         s.send(encoded_msg)
         s.close()
