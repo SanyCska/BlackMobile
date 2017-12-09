@@ -18,7 +18,9 @@ AddLocationForm:
             pos_hint: {"x":0.1, "y":0.2}
 
         Spinner:
+            id: spinner_1
             size_hint: 0.4, 0.1
             pos_hint: {"x":0.3, "y":0.8}
             text: 'User'
             values: ('S2pac', 'Vova', 'Anton')
+            on_text: root.set_user(spinner_1.text)
