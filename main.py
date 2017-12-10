@@ -26,12 +26,21 @@ class AddLocationForm(FloatLayout):
         # s = socket.socket()
         # # encoded_msg = bytes(data, "utf-8")
         # s.send(encoded_msg)
+
+
         b = dict({'destination': self.user, 'text': data})
         s.send(json.dumps(b).encode())
         s.close()
         del s
     def set_user(self, data):
-        self.user = data
+        # self.user = data
+        if data == 'S2pac':
+            self.user = 'sav'
+        elif data == 'Vova':
+            self.user = 'evv'
+        elif data == 'Anton':
+            self.user = 'map'
+
 
     def set_ip(self, data):
         self.host = data
