@@ -6,7 +6,7 @@ from kivy.uix.dropdown import DropDown
 from kivy.uix.button import Button
 import json
 
-host = "192.168.1.68"
+
 # host = "localhost"
 port = 3000
 
@@ -16,12 +16,13 @@ class CustomDropDown(DropDown):
 
 class AddLocationForm(FloatLayout):
     user = ''
+    host = ""
     def send_data(self, data):
         # tcpCliSock.send(data.encode())  # отправка данных в bytes
         # print(data)
 
         s = socket.socket()
-        s.connect((host, port))
+        s.connect((self.host, port))
         # s = socket.socket()
         # # encoded_msg = bytes(data, "utf-8")
         # s.send(encoded_msg)
@@ -31,6 +32,9 @@ class AddLocationForm(FloatLayout):
         del s
     def set_user(self, data):
         self.user = data
+
+    def set_ip(self, data):
+        self.host = data
 
 
 class MirrorApp(App):
